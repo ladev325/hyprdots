@@ -10,6 +10,9 @@
 
 </div>
 <br>
+> [!IMPORTANT]
+> The dotfiles were updated and now use a new color generation tool called Matugen, as well as there were many improvements, updates and bug fixes
+> THE README HAS NOT BEEN UPDATED YET, WAIT A LITTLE
 <div align="center">
 
 ## The following things were themed with Pywal script to match a single system style:
