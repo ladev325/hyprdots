@@ -1,24 +1,16 @@
 #!/bin/bash
-# Author: https://github.com/gh0stzk/dotfiles
-# Modified by: https://github.com/develcooking/hyprland-dotfiles
-# Modified again by: ladev325
+pkill rofi
 
-wallpaper_dir="${HOME}/.config/wallpapers/images"
-current_dir="${HOME}/.config/wallpapers"
+wallpaper_dir="${HOME}/.config/matugen/wallpapers/images"
+current_dir="${HOME}/.config/matugen/wallpapers"
 cache_dir="${HOME}/.cache/jp/${theme}"
-rofi_command="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/wall_select/style.rasi -theme-str ${rofi_override}"
-reload_script="${HOME}/.config/wallpapers/scripts/reload_all.sh"
+rofi_command="rofi -x11 -normal-window -dmenu -p "Wallpapers" -theme ${HOME}/.config/rofi/wall_select/style.rasi"
+reload_script="${HOME}/.config/matugen/scripts/apply.sh"
 
 # Create cache directory
 if [ ! -d "${cache_dir}" ]; then
     mkdir -p "${cache_dir}"
 fi
-
-physical_monitor_size=24
-monitor_res=$(hyprctl monitors | grep -A2 Monitor | head -n 2 | awk '{print $1}' | grep -oE '^[0-9]+')
-dots_per_inch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs printf "%.0f")
-monitor_res=$(( monitor_res * physical_monitor_size / dots_per_inch ))
-rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
 
 # Generate thumbnails
 for imagen in "$wallpaper_dir"/*.{jpg,jpeg}; do

@@ -1,6 +1,3 @@
-// Author: https://github.com/adi1090x/rofi
-// Modified by: ladev325
-
 @import ".config/rofi/theme.rasi"
 
 configuration {
@@ -28,11 +25,8 @@ window {
     anchor: center;
     fullscreen: false;
     width: 1000px;
-    border-radius: @power-border-radius;
     cursor: "default";
     background-color: @power-main-bg;
-    border: @power-border-th;
-    border-color: @power-border;
 }
 
 mainbox {
@@ -108,7 +102,7 @@ element-text {
     background-color: transparent;
     text-color: inherit;
     cursor: inherit;
-    vertical-align: 0.5;
+    // vertical-align: 0.5;
     horizontal-align: 0.5;
 }
 

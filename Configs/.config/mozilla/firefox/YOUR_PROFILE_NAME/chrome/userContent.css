@@ -1,0 +1,22 @@
+@-moz-document url-prefix("about:home"), url-prefix("about:newtab") {
+  h1.logo-and-wordmark-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 190px !important;
+    margin: 0 !important;
+  }
+
+  .logo-and-wordmark {
+    width: 100% !important;
+    min-height: 190px !important;
+    display: block !important;
+    background: url("img.jpg") no-repeat center center !important;
+    background-size: 145px !important;
+  }
+
+  .logo-and-wordmark .logo,
+  .logo-and-wordmark .wordmark {
+    display: none !important;
+  }
+}

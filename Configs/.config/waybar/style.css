@@ -1,13 +1,11 @@
-@import url("../../.cache/wal/colors-waybar.css");
+@import "matugen.css";
 
-@define-color waybar_tint_1 @color1;
-@define-color waybar_tint_2 @background;
-@define-color waybar_c1 @color6;
-@define-color waybar_c2 @color8;
+@define-color waybar_tint @surface;
+@define-color waybar_c1 @primary;
+@define-color waybar_c2 @tertiary;
 
-@define-color waybar_bg alpha(mix(@waybar_tint_1, black, 0.4), 0.3);
-@define-color tooltip_bg mix(@waybar_tint_1, black, 0.4);
-/*@define-color waybar_bg @waybar_tint_2;*/
+@define-color waybar_bg alpha(@waybar_tint, 0.5);
+@define-color tooltip_bg mix(@waybar_tint, black, 0.4);
 
 * {
     border: none;
@@ -22,7 +20,8 @@
 
 window#waybar {
     background-color: @waybar_bg;
-    border-top: 1px solid rgba(130, 130, 130, 0.3);
+    border-top: 1px solid mix(@waybar_bg, white, 0.15);
+    /*border-bottom: 1px solid mix(@waybar_bg, white, 0.15);*/
 }
 
 window#waybar>box {
@@ -127,11 +126,13 @@ tooltip {
     opacity: 0;
 }
 
-/* tray & right1 */
+/* right1 */
 
 #tray {
     padding: 7px 12px;
 }
+
+/* right2 */
 
 #pulseaudio {
     color: @waybar_c1;
@@ -151,10 +152,10 @@ tooltip {
 #bluetooth.disabled,
 #bluetooth.off,
 #bluetooth:not(.connected) {
-    color: #6c7086;
+    color: #535353;
 }
 
-/* right2 */
+/* right3 */
 
 #custom-lang {
     color: @waybar_c2;

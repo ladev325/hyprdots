@@ -1,0 +1,110 @@
+[config]
+
+# hyprland
+[templates.hyprland]
+input_path = './templates/hyprland.lua'
+output_path = '~/.config/hypr/matugen.lua'
+post_hook = 'hyprctl reload'
+
+
+# waybar
+[templates.waybar]
+input_path = './templates/waybar.css'
+output_path = '~/.config/waybar/matugen.css'
+post_hook = 'killall -SIGUSR2 waybar || waybar &'
+
+
+# rofi
+[templates.rofi]
+input_path = './templates/rofi.rasi'
+output_path = '~/.config/rofi/matugen.rasi'
+
+
+# dunst
+[templates.dunst]
+input_path = './templates/dunstrc'
+output_path = '~/.config/dunst/dunstrc'
+post_hook = 'dunstctl reload'
+
+
+# kitty
+[templates.kitty]
+input_path = './templates/kitty.conf'
+output_path = '~/.config/kitty/themes/matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all matugen"
+
+
+# btop
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+
+
+# gtk 
+[templates.gtk3]
+input_path = './templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = './templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+
+# kvantum
+[templates.kvantum_kvconfig]
+input_path = './templates/kvantum.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+
+[templates.kvantum_svg]
+input_path = './templates/kvantum.svg'
+output_path = '~/.config/Kvantum/matugen/matugen.svg'
+
+
+# pywalfox
+[templates.pywalfox]
+input_path = './templates/pywalfox.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+
+# walreader (darkreader)
+[templates.walreader]
+input_path = './templates/walreader.json'
+output_path = '~/.cache/wal/walreader.json'
+
+
+# vscode
+[templates.vscode]
+input_path = './templates/vscode.json'
+output_path = '~/.config/Code/User/matugen.json'
+
+
+# discord
+[templates.discord]
+input_path = './templates/discord.theme.css'
+output_path = '~/.config/BetterDiscord/themes/matugen.theme.css'
+
+
+# telegram
+[templates.telegram_theme]
+input_path = './templates/telegram_theme.tdesktop-theme'
+output_path = '~/.cache/telegram-matugen/colors.tdesktop-theme'
+
+[templates.telegram_background]
+input_path = './templates/telegram_background'
+output_path = '~/.cache/wal/telegram_background'
+
+
+# icons
+[templates.icons]
+input_path = './templates/icons'
+output_path = '~/.cache/wal/icons'
+
+
+# cava
+[templates.cava]
+input_path = './templates/cava'
+output_path = '~/.config/cava/themes/matugen'
+post_hook = 'pkill -USR1 cava || true'

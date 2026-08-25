@@ -1,0 +1,4 @@
+{
+  "backgroundColor": "{{colors.surface.default.hex}}",
+  "textColor": "{{colors.primary.default.hex | to_color | lighten: 10.0 | set_saturation : 20.0}}"
+}

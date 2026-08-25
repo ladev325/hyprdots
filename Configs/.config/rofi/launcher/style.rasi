@@ -1,6 +1,3 @@
-// Author: https://github.com/HyDE-Project/HyDE
-// Modified by: ladev325
-
 @import ".config/rofi/theme.rasi"
 
 configuration {
@@ -35,9 +32,6 @@ mainbox {
     orientation: vertical;
     children: [ "inputbar" , "listbox" ];
     background-color: transparent;
-    border: @rofi-border-th;
-    border-color: @rofi-border;
-    border-radius: @rofi-border-radius;
 }
 
 inputbar {

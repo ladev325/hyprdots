@@ -1,5 +1,4 @@
-# Author: https://github.com/adi1090x/rofi
-# Modified by: ladev325
+pkill rofi
 
 dir="${HOME}/.config/rofi/powermenu"
 theme='style'
@@ -16,14 +15,14 @@ yes=''
 no=''
 
 rofi_cmd() {
-    rofi -x11 -dmenu \
+    rofi -x11 -normal-window -dmenu \
     -p "󰣇 ${USER}" \
     -mesg "Uptime: $uptime" \
     -theme ${dir}/${theme}.rasi
 }
 
 confirm_cmd() {
-    rofi -x11 -dmenu \
+    rofi -x11 -normal-window -dmenu \
     -p 'Confirmation' \
     -mesg 'Are you Sure?' \
     -theme ${dir}/confirm.rasi

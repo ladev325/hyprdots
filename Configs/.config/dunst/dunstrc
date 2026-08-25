@@ -1,17 +1,16 @@
 [global]
-    frame_color = "#9B9498"
+    frame_color = "#b6c4ff"
+    corner_radius = 10
 
 [urgency_low]
-    background = "#15161b"
-    foreground = "#f2dec8"
+    background = "#121318"
+    foreground = "#e3e1e9"
 
 [urgency_normal]
-    background = "#15161b"
-    foreground = "#f2dec8"
+    background = "#121318"
+    foreground = "#e3e1e9"
 
 [urgency_critical]
-    background = "#15161b"
-    foreground = "#f2dec8"
-
-[global]
-    corner_radius = 10
+    background = "#121318"
+    foreground = "#e3e1e9"
+    frame_color = "#c91616"

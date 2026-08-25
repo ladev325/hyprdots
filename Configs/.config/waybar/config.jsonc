@@ -58,13 +58,13 @@
     },
     "cpu": {
         "format": "󰍛 {usage}%",
-        "interval": 5,
+        "interval": 2,
         "tooltip": true
     },
     "custom/gpu": {
         "format": "󰾲  {}%",
-        "interval": 5,
-        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "interval": 2,
+        "exec": "rocm-smi --showuse --csv 2>/dev/null | awk -F, 'NR==2 {print $2}'",
         "tooltip": true,
         "tooltip-format": "GPU Usage: {}%"
     },
@@ -88,14 +88,14 @@
     },
     "custom/cpu-temp": {
         "format": "󰍛  {}°C",
-        "exec": "sensors | grep 'Package id 0' | awk '{printf \"%.0f\", $4}' | tr -d '+°C'",
+        "exec": "sensors | awk '/Tctl:/ {gsub(/[+°C]/, \"\", $2); printf \"%.0f\", $2; exit}'",
         "interval": 5,
         "tooltip": true,
         "tooltip-format": "CPU Temperature: {}°C"
     },
     "custom/gpu-temp": {
         "format": "󰾲  {}°C",
-        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        "exec": "echo $(( $(cat /sys/class/drm/card1/device/hwmon/hwmon*/temp1_input) / 1000 ))",
         "interval": 5,
         "tooltip": true,
         "tooltip-format": "GPU Temperature: {}°C"
@@ -110,7 +110,7 @@
     },
     "pulseaudio": {
         "format": "  {volume}%",
-        "format-muted": "muted",
+        "format-muted": "󰝟 ",
         "on-click": "pavucontrol",
         "scroll-step": 5
     },
