@@ -19,8 +19,3 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 PROMPT="  %{$fg[cyan]%}%c%{$reset_color%} "
 fastfetch
-export CMAKE_BUILD_PARALLEL_LEVEL=$(nproc)
-
-# Envs
-export PATH="$PATH:/home/ladev325/.local/bin"
-export PATH="$PATH:$HOME/.dotnet/tools"
